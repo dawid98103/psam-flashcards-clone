@@ -32,12 +32,19 @@ export const GlobalProvider = ({ children }) => {
         });
     }
 
+    function deleteByLessonId(id) {
+        dispatch({
+            type: 'DELETE_LESSON',
+            payload: id
+        });
+    }
+
     function findByLessonId(id) {
         return state.flashcardsLessons.filter(lesson => parseInt(lesson.id) === parseInt(id))[0]
     }
 
     return (
-        <GlobalContext.Provider value={{ flashcardsLessons: state.flashcardsLessons, addFlashcardsLesson, findByLessonId }}>
+        <GlobalContext.Provider value={{ flashcardsLessons: state.flashcardsLessons, addFlashcardsLesson, findByLessonId, deleteByLessonId }}>
             {children}
         </GlobalContext.Provider>
     )
