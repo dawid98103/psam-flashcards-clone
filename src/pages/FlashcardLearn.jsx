@@ -48,7 +48,7 @@ const FlashcardLearn = () => {
                         </CardContent>
                         <CardActions sx={{ display: 'flex', justifyContent: 'center', py: 4 }}>
                             {checked ?
-                                <Button variant='contained' size="large" onClick={() => handleNextClicked()}>Dalej</Button>
+                                <Button variant='contained' size="large" onClick={() => handleNextClicked()}>{lesson.flashcards[currentFlashcard + 1] === undefined ? "Zakończ" : "Dalej"}</Button>
                                 :
                                 <Button variant='contained' size="large" onClick={() => handleCheckButtonClicked()}>Sprawdź</Button>
                             }

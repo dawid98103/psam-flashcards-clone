@@ -4,7 +4,7 @@ const FlashcardListItem = ({ id, lessonName, avatarUrl, onClick }) => {
     return (
         <ListItem sx={{ py: 2 }}>
             <ListItemAvatar>
-                <Avatar src={avatarUrl} />
+                <Avatar sx={{ height: 60, width: 60 }} src={avatarUrl} />
             </ListItemAvatar>
             <ListItemButton onClick={() => onClick(id)}>
                 <ListItemText primary={lessonName} />

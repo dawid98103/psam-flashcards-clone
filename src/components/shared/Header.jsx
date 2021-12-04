@@ -18,6 +18,11 @@ const StyledLink = styled(Link)({
     textDecoration: 'none'
 })
 
+const StyledLinkHamburger = styled(Link)({
+    color: 'black',
+    textDecoration: 'none'
+})
+
 const Header = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -73,17 +78,19 @@ const Header = () => {
                             }}
                         >
                             <MenuItem onClick={handleCloseNavMenu}>
-                                <Typography textAlign="center">Strona główna</Typography>
+                                <StyledLinkHamburger to='/'>
+                                    <Typography textAlign="center">Strona główna</Typography>
+                                </StyledLinkHamburger>
                             </MenuItem>
                             <MenuItem onClick={handleCloseNavMenu}>
-                                <StyledLink to='/flashcards/create'>
+                                <StyledLinkHamburger to='/flashcards/create'>
                                     <Typography textAlign="center">Stwórz fiszki</Typography>
-                                </StyledLink>
+                                </StyledLinkHamburger>
                             </MenuItem>
                             <MenuItem onClick={handleCloseNavMenu}>
-                                <StyledLink to='/flashcards/list'>
+                                <StyledLinkHamburger to='/flashcards/list'>
                                     <Typography textAlign="center">Fiszki</Typography>
-                                </StyledLink>
+                                </StyledLinkHamburger>
                             </MenuItem>
                         </Menu>
                     </Box>
